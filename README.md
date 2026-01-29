@@ -31,7 +31,7 @@ A beautiful, interactive web-based drum machine and music sequencer built for fo
 - **TypeScript** - Type safety
 - **Vite** - Build tool & dev server
 - **Tailwind CSS 4** - Styling
-- **Web Audio API** - Sound synthesis
+- **🔊 Tone.js Audio Engine** - Professional-grade synthesis with scheduled timing
 - **Radix UI** - Accessible components
 - **Motion** - Smooth animations
 
