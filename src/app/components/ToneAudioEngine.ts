@@ -28,7 +28,7 @@ export class ToneAudioEngine {
     };
 
     constructor() {
-        this.masterGain = new Tone.Gain(0.5).toDestination();
+        this.masterGain = new Tone.Gain(1.0).toDestination();
 
         // Reverb Setup (Large Room feel)
         this.reverb = new Tone.Reverb({
@@ -74,7 +74,7 @@ export class ToneAudioEngine {
             octaves: 1.5
         }).connect(this.masterGain);
         this.hatClosed.frequency.value = 200;
-        this.hatClosed.volume.value = -6;
+        this.hatClosed.volume.value = -3;
 
         this.hatOpen = new Tone.MetalSynth({
             envelope: {
@@ -88,7 +88,7 @@ export class ToneAudioEngine {
             octaves: 1.5
         }).connect(this.reverb);
         this.hatOpen.frequency.value = 200;
-        this.hatOpen.volume.value = -6;
+        this.hatOpen.volume.value = -3;
 
         // Row 5: Bass (Triangle)
         this.bass = new Tone.Synth({
@@ -140,7 +140,7 @@ export class ToneAudioEngine {
         this.volume = volume;
         // Map 0-100 to decibels (approx range -60db to 0db)
         // or just linear gain control if we prefer to stick to simple multiplier
-        const gainValue = volume <= 0 ? 0 : (volume / 100) * 0.8; // Boost to 0.8
+        const gainValue = volume <= 0 ? 0 : (volume / 100) * 1.3; // Boost to 1.3x
         this.masterGain.gain.rampTo(gainValue, 0.1);
     }
 

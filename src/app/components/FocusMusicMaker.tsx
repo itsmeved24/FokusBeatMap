@@ -120,8 +120,8 @@ export function FocusMusicMaker() {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-white flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
-      <div className="w-full max-w-2xl h-full flex flex-col justify-center py-4 relative">
+    <div className="h-screen w-screen overflow-hidden bg-white flex flex-col items-center justify-center p-2 sm:p-6 md:p-8">
+      <div className="w-full max-w-2xl h-full flex flex-col justify-center py-2 relative">
         <PlusButton onClick={() => setAboutModalOpen(!aboutModalOpen)} />
         <AboutModal isOpen={aboutModalOpen} onClose={() => setAboutModalOpen(false)} />
 
@@ -139,7 +139,7 @@ export function FocusMusicMaker() {
           timerStarted={timerStarted}
         />
 
-        <div className="h-4 sm:h-6" />
+        <div className="h-2 sm:h-6" />
 
         <MusicDevicePanel
           gridData={gridData}

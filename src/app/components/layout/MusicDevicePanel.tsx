@@ -36,21 +36,21 @@ export function MusicDevicePanel({
 }: MusicDevicePanelProps) {
     return (
         <div
-            className="device relative mx-auto shadow-2xl"
+            className="device relative mx-auto shadow-2xl flex flex-col"
             style={{
                 width: '100%',
                 maxWidth: '380px',
                 height: 'auto',
-                aspectRatio: '380/450',
                 background: '#efefef',
                 border: '1px solid #f1f1f1',
                 borderRadius: 'clamp(16px, 5vw, 28px)',
                 padding: 'clamp(16px, 5vw, 24px)',
-                flexShrink: 0
+                flexShrink: 1,      // Allow shrinking
+                minHeight: '0'      // Firefox/Flex fix
             }}
         >
             {/* Device Top - Grid Area */}
-            <div className="device-top mb-4">
+            <div className="device-top mb-4 flex-1 min-h-0 flex flex-col justify-center">
                 <DrawingGrid
                     gridData={gridData}
                     setGridData={setGridData}
@@ -63,13 +63,9 @@ export function MusicDevicePanel({
 
             {/* Device Bottom - Controls Area */}
             <div
-                className="device-bottom"
+                className="device-bottom w-full shrink-0"
                 style={{
-                    position: 'absolute',
-                    top: '259px',
-                    left: 0,
-                    right: 0,
-                    height: '189px',
+                    height: 'auto', // Allow content to define height
                     background: 'linear-gradient(357deg, #c6c6c6 -13.02%, #e0e0e0 12.25%, #f6f6f6 100%)',
                     border: '1px solid #f1f1f1',
                     borderRadius: '4px 4px 24px 24px',

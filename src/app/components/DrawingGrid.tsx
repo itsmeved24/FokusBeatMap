@@ -238,7 +238,7 @@ export function DrawingGrid({ gridData, setGridData, isPlaying, volume, isMuted,
         ref={canvasRef}
         width={800}
         height={500}
-        className="w-full h-auto cursor-crosshair rounded-lg"
+        className="max-w-full max-h-[50vh] w-auto h-auto cursor-crosshair rounded-lg mx-auto"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
